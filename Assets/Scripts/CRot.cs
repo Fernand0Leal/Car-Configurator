@@ -13,12 +13,17 @@ public class CRot : MonoBehaviour
     bool rotateLeft = false;
     public Button cameraB;
     public Button cameraA;
+   
+   
 
     void Start () {
         Button btn = cameraB.GetComponent<Button>();
         Button btn1 = cameraA.GetComponent<Button>();
+       
         btn.onClick.AddListener(TaskOnClick);
         btn1.onClick.AddListener(TaskOnClick1);
+       
+
 
     
     }
@@ -28,6 +33,9 @@ public class CRot : MonoBehaviour
     void TaskOnClick1(){
         RotateCarLeft();
     }
+
+   
+    
  
     public void RotateCarRight(){
         rotateRight = !rotateRight;
@@ -37,7 +45,15 @@ public class CRot : MonoBehaviour
         rotateLeft = !rotateLeft;
     }
 
+    public void Zoom(){
+        
+    }
+
     public void Update(){
+
+        
+
+       
         if (rotateRight){
             rotationSpeed = 20;
             transform.Rotate(0,rotationSpeed*Time.deltaTime,0);
@@ -47,6 +63,9 @@ public class CRot : MonoBehaviour
            rotationSpeed = -20;
            transform.Rotate(0,rotationSpeed*Time.deltaTime,0);
         }
+
+        
+
     }
     }
 
