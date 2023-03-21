@@ -45,9 +45,7 @@ public class CRot : MonoBehaviour
         rotateLeft = !rotateLeft;
     }
 
-    public void Zoom(){
-        
-    }
+    
 
     public void Update(){
 
