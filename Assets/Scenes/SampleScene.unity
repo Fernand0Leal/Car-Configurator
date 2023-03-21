@@ -1600,7 +1600,7 @@ Transform:
   - {fileID: 6396051404333728090}
   m_Father: {fileID: 764697747743812047}
   m_RootOrder: 36
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -48}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -31.103996}
 --- !u!111 &801192631
 Animation:
   m_ObjectHideFlags: 0
@@ -1611,7 +1611,9 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: df1a7a351d39f4c3ebe7f9d3292d05dd, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: df1a7a351d39f4c3ebe7f9d3292d05dd, type: 2}
+  - {fileID: 7400000, guid: f69d13537623c44cb9b814252b1c9ea1, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
