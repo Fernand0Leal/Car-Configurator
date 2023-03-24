@@ -8,20 +8,43 @@ using TMPro;
 public class DropDownHandler : MonoBehaviour
 {
 
-    
-    public Material [] materialS = new Material [6];
     public TMP_Dropdown c_Dropdown;
-    public GameObject car; 
-    public GameObject hood;
-    public Material [] hMaterial = new Material [6];
+    public Material defaultMaterial; 
+
+    public Material[] sharedMaterials;
+    public Material [] materialS = new Material [7];
+
+    public GameObject [] carPaint; 
    
     
 
     public void Start(){
 
+       carPaint = GameObject.FindGameObjectsWithTag ("carColor");
+       defaultMaterial = carPaint[0].GetComponent<MeshRenderer>().sharedMaterials[0];
        
-        c_Dropdown.onValueChanged.AddListener(SelectMesh);
+
+    //    foreach (GameObject carColor in carPaint)
+    //     {
+    //         Renderer[] renderers = carColor.GetComponents<Renderer>();
+    //         foreach (Renderer renderer in renderers)
+    //         {
+               
+    //             Material[] m_materials = renderer.sharedMaterials;
+                
+
+    //             foreach (Material material in renderer.sharedMaterials)
+    //             {
+    //                m_materials[0] = defaultMaterial;
+    //             }
+    //             renderer.sharedMaterials = m_materials;
+                
+    //         }
         
+    
+    //     }
+
+        c_Dropdown.onValueChanged.AddListener(SelectMesh);
     
     }
 
@@ -29,8 +52,23 @@ public class DropDownHandler : MonoBehaviour
     public void SelectMesh(int index){
 
     
-        car.GetComponent<MeshRenderer>().material = materialS[index];
-        hood.GetComponent<MeshRenderer>().material = hMaterial[index];
+        foreach (GameObject carColor in carPaint)
+            {
+            Renderer[] renderers = carColor.GetComponentsInChildren<Renderer>();
+
+            foreach (Renderer rend in renderers)
+            {
+             Material[] m_materials = GetComponentInChildren<Renderer>().sharedMaterials;
+                
+
+                foreach (Material material in GetComponentInChildren<Renderer>().sharedMaterials)
+                {
+                 m_materials[0] = materialS[index];
+                }
+             rend.materials = m_materials;
+             
+            }
+          }
 
         
 

@@ -37,7 +37,7 @@ public class Rims : MonoBehaviour
 
                 foreach (Material material in renderer.sharedMaterials)
                 {
-                   m_materials[1] = defaultMaterial;
+                   m_materials[0] = defaultMaterial;
                 }
                 renderer.sharedMaterials = m_materials;
                 
@@ -69,8 +69,8 @@ public class Rims : MonoBehaviour
 
                 foreach (Material material in GetComponentInChildren<Renderer>().sharedMaterials)
                 {
-                 m_materials[1] = rMaterial[index];
-             }
+                 m_materials[0] = rMaterial[index];
+                }
              rend.materials = m_materials;
              
             }
