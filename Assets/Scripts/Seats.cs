@@ -9,7 +9,7 @@ public class Seats : MonoBehaviour
 
     public TMP_Dropdown s_Dropdown;
     public GameObject seat1; 
-    public GameObject seat2;
+    //public GameObject seat2;
 
     public Material[] seatsM = new Material [3];
 
@@ -22,7 +22,7 @@ public class Seats : MonoBehaviour
     void SelectMesh(int index)
     {
         seat1.GetComponent<MeshRenderer>().material = seatsM[index];
-        seat2.GetComponent<MeshRenderer>().material = seatsM[index];
+       // seat2.GetComponent<MeshRenderer>().material = seatsM[index];
 
 
         

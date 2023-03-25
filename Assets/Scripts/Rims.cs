@@ -23,28 +23,28 @@ public class Rims : MonoBehaviour
         // addPrice = GameObject.Find("AddValue").GetComponent<Price.cs>();
        
         wheels = GameObject.FindGameObjectsWithTag ("wheel");
-        defaultMaterial = wheels[1].GetComponent<MeshRenderer>().sharedMaterials[1];
+        defaultMaterial = wheels[0].GetComponent<MeshRenderer>().sharedMaterials[1];
         
        
-        foreach (GameObject wheel in wheels)
-        {
-            Renderer[] renderers = wheel.GetComponents<Renderer>();
-            foreach (Renderer renderer in renderers)
-            {
+        // foreach (GameObject wheel in wheels)
+        // {
+        //     Renderer[] renderers = wheel.GetComponents<Renderer>();
+        //     foreach (Renderer renderer in renderers)
+        //     {
                
-                Material[] m_materials = renderer.sharedMaterials;
+        //         Material[] m_materials = renderer.sharedMaterials;
                 
 
-                foreach (Material material in renderer.sharedMaterials)
-                {
-                   m_materials[0] = defaultMaterial;
-                }
-                renderer.sharedMaterials = m_materials;
+        //         foreach (Material material in renderer.sharedMaterials)
+        //         {
+        //            m_materials[0] = defaultMaterial;
+        //         }
+        //         renderer.sharedMaterials = m_materials;
                 
-            }
+        //     }
             
 
-        }
+        // }
        
 
     

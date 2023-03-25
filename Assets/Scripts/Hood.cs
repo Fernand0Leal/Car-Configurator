@@ -9,16 +9,10 @@ public class Hood : MonoBehaviour
 
     public TMP_Dropdown h_Dropdown;
     public GameObject hood; 
-    public GameObject hood2;
-    public GameObject bWindows;
-    public GameObject bWindows2;
-    public GameObject bWindows3;
-    public GameObject fWindows1;
-    public GameObject fWindows2;
-    public GameObject fWindows3;
-    public GameObject fWindows4;
-    public GameObject fWindows5;
-    public GameObject fWindows6;
+    public GameObject rWindow1;
+    public GameObject rWindow2;
+    public GameObject rWindow3;
+   
 
 
 
@@ -34,29 +28,16 @@ public class Hood : MonoBehaviour
     {
         if (value ==0){
             hood.SetActive(true);
-            hood2.SetActive(true);
-            bWindows.SetActive(true);
-            bWindows2.SetActive(true);
-            bWindows3.SetActive(true);
-            fWindows1.SetActive(true);
-            fWindows2.SetActive(true);
-            fWindows3.SetActive(true);
-            fWindows4.SetActive(true);
-            fWindows5.SetActive(true);
-            fWindows6.SetActive(true);
+            rWindow1.SetActive(true);
+            rWindow2.SetActive(true);
+            rWindow3.SetActive(true);
         }
         if (value ==1){
             hood.SetActive(false);
-            hood2.SetActive(false);
-            bWindows.SetActive(false);
-            bWindows2.SetActive(false);
-            bWindows3.SetActive(false);
-            fWindows1.SetActive(false);
-            fWindows2.SetActive(false);
-            fWindows3.SetActive(false);
-            fWindows4.SetActive(false);
-            fWindows5.SetActive(false);
-            fWindows6.SetActive(false);
+            rWindow1.SetActive(false);
+            rWindow2.SetActive(false);
+            rWindow3.SetActive(false);
+            
         }
         
     }
