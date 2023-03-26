@@ -14,6 +14,7 @@ public class Rims : MonoBehaviour
     public Material [] rMaterial = new Material [3];
 
     public GameObject [] wheels;
+
     
     
     // Start is called before the first frame update
@@ -24,6 +25,8 @@ public class Rims : MonoBehaviour
        
         wheels = GameObject.FindGameObjectsWithTag ("wheel");
         defaultMaterial = wheels[0].GetComponent<MeshRenderer>().sharedMaterials[1];
+
+        
         
        
         // foreach (GameObject wheel in wheels)
@@ -57,6 +60,8 @@ public class Rims : MonoBehaviour
 
     public void RimsMesh(int index )
     {
+
+     
         
             foreach (GameObject wheel in wheels)
             {

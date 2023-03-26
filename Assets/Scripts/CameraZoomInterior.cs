@@ -10,6 +10,7 @@ public class CameraZoomInterior : MonoBehaviour
     public Button interiorB;
     public bool door;
     
+    
 
     
     
@@ -32,6 +33,7 @@ public class CameraZoomInterior : MonoBehaviour
 
         door = !door;
         dAnimator.SetBool ("ButtonPress", door);
+        
         
     }
  }

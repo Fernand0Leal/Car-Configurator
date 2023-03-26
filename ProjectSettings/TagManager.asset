@@ -6,7 +6,7 @@ TagManager:
   tags:
   - wheel
   - carColor
-  - Hood
+  - Window
   layers:
   - Default
   - TransparentFX
