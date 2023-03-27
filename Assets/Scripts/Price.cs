@@ -12,32 +12,32 @@ public class Price : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI priceText;
 
-    // // Start is called before the first frame update
-    // void Start()
-    // {
+    // Start is called before the first frame update
+    void Start()
+    {
 
     
-    //     priceText.text = 0 + "$";
+        priceText.text = 0 + "$";
         
 
         
-    // }
+    }
 
-    // public void Update(){
+    public void Update(){
         
-    // }
+    }
    
 
-    // // Update is called once per frame
-    // public void AddValue (int pricE)
-    // {
+    // Update is called once per frame
+    public void AddValue (int pricE)
+    {
             
             
         
-    // }
+    }
 
-    // public void updateValue (int totalPrice){
+    public void updateValue (int totalPrice){
 
-    //     priceText.text =  totalPrice.ToString() + "$"; 
-    // }
+        priceText.text =  totalPrice.ToString() + "$"; 
+    }
 }
