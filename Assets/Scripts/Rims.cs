@@ -4,8 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
+
 public class Rims : MonoBehaviour
 {
+
+    
+    
+   const string PrefName = "optionvalue";
+
     public TMP_Dropdown r_Dropdown;
     
     public Material defaultMaterial;
@@ -16,6 +23,7 @@ public class Rims : MonoBehaviour
 
     public GameObject [] wheels;
 
+    public GameObject rims0;
     public GameObject rims1;
     public GameObject rims2;
     public GameObject rims3;
@@ -24,10 +32,16 @@ public class Rims : MonoBehaviour
 
     public bool rimButton;
     public bool colorButton;
+
+    public int price;
+
     
 
+    
+    
+    
    
-   
+    
 
     
     
@@ -35,8 +49,14 @@ public class Rims : MonoBehaviour
     void Start()
     {
 
+       
 
-        
+
+    //    r_Dropdown.onValueChanged.AddListener(delegate
+    //    {
+    //     r_DropdownValueChangeHappened(r_Dropdown);
+    //    });
+       
 
        
         // addPrice = GameObject.Find("AddValue").GetComponent<Price.cs>();
@@ -50,30 +70,47 @@ public class Rims : MonoBehaviour
 
     }
 
+    // public void r_DropdownValueChangeHappened(TMP_Dropdown sender){
+    //     PlayerPrefs.SetInt(PrefName, r_Dropdown.value);
+    //     PlayerPrefs.Save();
+    // }
+   
     public void LoadColorOptions(){
 
         r_Dropdown.ClearOptions();
-        var option1 = new TMPro.TMP_Dropdown.OptionData ("Yellow Alloy");
+        var option0 = new TMPro.TMP_Dropdown.OptionData ("Color"); 
+        r_Dropdown.options.Add(option0);
+        var option1 = new TMPro.TMP_Dropdown.OptionData ("Yellow Alloy"); 
         r_Dropdown.options.Add(option1);
-         var option2 = new TMPro.TMP_Dropdown.OptionData ("Black Titanium");
+         var option2 = new TMPro.TMP_Dropdown.OptionData ("Black Titanium"); 
         r_Dropdown.options.Add(option2);
-         var option3 = new TMPro.TMP_Dropdown.OptionData ("White Carbon");
+         var option3 = new TMPro.TMP_Dropdown.OptionData ("White Carbon"); 
         r_Dropdown.options.Add(option3);
 
+        
         r_Dropdown.RefreshShownValue();
+
+       
+        
+        
 
         colorButton = true;
         rimButton = false;
 
-        r_Dropdown.onValueChanged.AddListener(RimColor);
-    
 
+        
+
+        r_Dropdown.onValueChanged.AddListener(RimColor);
+
+        
 
     }
-
+    
      public void LoadRimOptions(){
 
         r_Dropdown.ClearOptions();
+        var option0 = new TMPro.TMP_Dropdown.OptionData ("Rims");
+        r_Dropdown.options.Add(option0);
         var option1 = new TMPro.TMP_Dropdown.OptionData ("Style 1");
         r_Dropdown.options.Add(option1);
          var option2 = new TMPro.TMP_Dropdown.OptionData ("Style 2");
@@ -88,13 +125,15 @@ public class Rims : MonoBehaviour
         r_Dropdown.RefreshShownValue();
         rimButton = true; 
         colorButton = false;
+        
          
         r_Dropdown.onValueChanged.AddListener(RimMesh);
       
-        
+       
 
 
     }
+
 
     public void RimColor(int index )
     {
@@ -126,43 +165,98 @@ public class Rims : MonoBehaviour
     public void RimMesh(int value ) 
     {
 
+                
+
     if (rimButton == true){
-        if (value == 0 ){
+
+            if (value == 0 ){
+            rims0.SetActive(true);
             rims1.SetActive(true);
             rims2.SetActive(false);
             rims3.SetActive(false);
             rims4.SetActive(false);
             rims5.SetActive(false);
-        }
-         if (value == 1){
+            
+            }
+            
+        
+            if (value == 1){
+            rims0.SetActive(false);
+            rims1.SetActive(true); 
+            rims2.SetActive(false);
+            rims3.SetActive(false);
+            rims4.SetActive(false);
+            rims5.SetActive(false);           
+            price += 500;
+            
+            print(price);
+            return;
+            }
+            else {
+                price -=500;
+                return;
+                
+                
+            }
+            
+            
+            
+            
+            
+            
+
+            
+        
+
+        
+            
+            if (value == 2){
+            rims0.SetActive(false);
             rims1.SetActive(false);
             rims2.SetActive(true);
             rims3.SetActive(false);
             rims4.SetActive(false);
             rims5.SetActive(false);
-        }
-         if (value == 2){
+            price += 500;
+            print(price);
+            }
+            else if(rims2 == false){
+                price -=500;
+                return;
+            }
+
+            
+            
+        
+             if (value == 3){
+            rims0.SetActive(false);
             rims1.SetActive(false);
             rims2.SetActive(false);
             rims3.SetActive(true);
             rims4.SetActive(false);
             rims5.SetActive(false);
-        }
-         if (value == 3){
+            print(price);
+             }
+             if (value == 4){
+            rims0.SetActive(false);
             rims1.SetActive(false);
             rims2.SetActive(false);
             rims3.SetActive(false);
             rims4.SetActive(true);
             rims5.SetActive(false);
-        } if (value == 4){
+            print(price);
+             }
+            if (value == 5){
+            rims0.SetActive(false);
             rims1.SetActive(false);
             rims2.SetActive(false);
             rims3.SetActive(false);
             rims4.SetActive(false);
             rims5.SetActive(true);
-        }
-        
-    }
+            print(price);
+            }
+
+     }
        
      
 
@@ -201,4 +295,5 @@ public class Rims : MonoBehaviour
     //     }
     // }
 
-}   
+
+}

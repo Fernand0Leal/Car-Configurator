@@ -705,6 +705,7 @@ GameObject:
   - component: {fileID: 353593265}
   - component: {fileID: 353593267}
   - component: {fileID: 353593266}
+  - component: {fileID: 353593268}
   m_Layer: 5
   m_Name: Output
   m_TagString: Untagged
@@ -829,6 +830,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353593264}
   m_CullTransparentMesh: 1
+--- !u!114 &353593268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353593264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac3ccd775a5040f18612fc0b8897fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceManager: {fileID: 859196347}
+  priCe: 0
+  priceTxt: {fileID: 859196349}
 --- !u!1 &356493832
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356493832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.3, y: 5.5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2108,7 +2124,7 @@ GameObject:
   - component: {fileID: 859196349}
   - component: {fileID: 859196351}
   m_Layer: 5
-  m_Name: Price
+  m_Name: PriceManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2240,10 +2256,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 859196347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aac3ccd775a5040f18612fc0b8897fb5, type: 3}
+  m_Script: {fileID: 11500000, guid: c8d69a77e790748f780c8d3a6180826a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priceValue: {fileID: 0}
+  pricE: 0
   priceText: {fileID: 859196349}
 --- !u!1 &928489353
 GameObject:
@@ -2549,9 +2565,9 @@ MonoBehaviour:
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
   m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
+  m_BlendUpdateMethod: 0
   m_DefaultBlend:
-    m_Style: 4
+    m_Style: 2
     m_Time: 2
     m_CustomCurve:
       serializedVersion: 2
@@ -3825,6 +3841,7 @@ MonoBehaviour:
   - {fileID: -9129505833707018738, guid: bf9eff8b12d7c42b6b435dafa2757642, type: 3}
   rMaterial:
   - {fileID: -9129505833707018738, guid: bf9eff8b12d7c42b6b435dafa2757642, type: 3}
+  - {fileID: -9129505833707018738, guid: bf9eff8b12d7c42b6b435dafa2757642, type: 3}
   - {fileID: 2100000, guid: 7d3f5f85ad92d457f9d76cc5937c1e3b, type: 2}
   - {fileID: 2100000, guid: f357cc0d2cf61424eb8cee7b60a616f1, type: 2}
   wheels:
@@ -3848,6 +3865,7 @@ MonoBehaviour:
   - {fileID: 8945016656745599147}
   - {fileID: 5422456872635074036}
   - {fileID: 7064635805663855144}
+  rims0: {fileID: 778831743}
   rims1: {fileID: 778831743}
   rims2: {fileID: 2044948404}
   rims3: {fileID: 1964500338}
@@ -3855,6 +3873,7 @@ MonoBehaviour:
   rims5: {fileID: 1567006148}
   rimButton: 0
   colorButton: 0
+  price: 30000
 --- !u!1 &1713500484
 GameObject:
   m_ObjectHideFlags: 0
@@ -12464,6 +12483,7 @@ GameObject:
   - component: {fileID: 1731722777769092191}
   - component: {fileID: 1731722777769092188}
   - component: {fileID: 1731722777769092189}
+  - component: {fileID: 1731722777769092192}
   m_Layer: 0
   m_Name: RimsD
   m_TagString: Untagged
@@ -12577,6 +12597,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731722777769092179}
   m_CullTransparentMesh: 1
+--- !u!114 &1731722777769092192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731722777769092179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e9acf6c6dac42f592ca7569b62e663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1731722777776034064
 MonoBehaviour:
   m_ObjectHideFlags: 0
