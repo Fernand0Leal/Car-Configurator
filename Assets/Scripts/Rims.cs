@@ -12,15 +12,16 @@ public class Rims : MonoBehaviour
     
     
    const string PrefName = "optionvalue";
-
+    
     public TMP_Dropdown r_Dropdown;
     
     public Material defaultMaterial;
 
     public Material[] sharedMaterials;
+    //[SerializeField]
     public Material [] rMaterial = new Material [3];
     
-
+    //[SerializeField]
     public GameObject [] wheels;
 
     public GameObject rims0;
@@ -190,14 +191,9 @@ public class Rims : MonoBehaviour
             price += 500;
             
             print(price);
-            return;
+            
             }
-            else {
-                price -=500;
-                return;
-                
-                
-            }
+            
             
             
             

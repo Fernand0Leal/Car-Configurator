@@ -12,7 +12,7 @@ public class Price : MonoBehaviour
 
     void Start(){
 
-       //priceTxt = GetComponent<TextMeshProUGUI>();
+       //priceTxt = GetComponent<Rims>().price;
     }
 
     void Update(){

@@ -4,66 +4,116 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening; 
 
 public class CRot : MonoBehaviour
 {
-    public GameObject rotatedObject;
-    public float rotationSpeed;
-    bool rotateRight = false;
-    bool rotateLeft = false;
+    public GameObject rightButton;
+    public GameObject leftButton;
+   
+    
     public Button cameraB;
     public Button cameraA;
+
+    private string currentOption = "option1";
+
+    
    
    
 
-    void Start () {
+    
+
+    public void Start(){
+
         Button btn = cameraB.GetComponent<Button>();
         Button btn1 = cameraA.GetComponent<Button>();
        
         btn.onClick.AddListener(TaskOnClick);
         btn1.onClick.AddListener(TaskOnClick1);
+
+
+    }
+    public void TaskOnClick () {
+       
+       
+        switch (currentOption)
+        {
+            case "option1":
+            RotateCarRight(); 
+             
+              
+            currentOption = "option2";
+            break;
+
+            case "option2":
+            StopRotation();
+              
+            currentOption = "option1";
+            break;
+
+        }
        
 
 
-    
+       
     }
-    void TaskOnClick () {
-       RotateCarRight(); 
-    }
-    void TaskOnClick1(){
-        RotateCarLeft();
+    public void TaskOnClick1(){
+        
+        switch (currentOption)
+        {
+            case "option1":
+            RotateCarLeft();
+              
+              
+            currentOption = "option2";
+            break;
+
+            case "option2":
+            StopRotation();
+             
+            currentOption = "option1";
+            break;
+
+        }
+        
     }
 
    
     
  
     public void RotateCarRight(){
-        rotateRight = !rotateRight;
+
+        transform.DORotate(new Vector3(0.0f,360.0f, 0.0f), 10.0f, RotateMode.FastBeyond360)
+        .SetLoops(-1, LoopType.Restart)
+        .SetRelative()
+        .SetEase(Ease.Linear);
+      
+        
+        
+       
     }
 
     public void RotateCarLeft(){
-        rotateLeft = !rotateLeft;
+        transform.DORotate(new Vector3(0.0f,-360.0f, 0.0f), 10.0f, RotateMode.FastBeyond360)
+        .SetLoops(-1, LoopType.Restart)
+        .SetRelative()
+        .SetEase(Ease.Linear);
+  
+       
+       
+    }
+
+    public void StopRotation()
+    {
+        transform.DORotate(new Vector3(0.0f,0.0f, 0.0f), 10.0f, RotateMode.FastBeyond360)
+        .SetLoops(-1, LoopType.Restart)
+        .SetRelative()
+        .SetEase(Ease.Linear);
+        
+
     }
 
     
 
-    public void Update(){
-
-        
-
-       
-        if (rotateRight){
-            rotationSpeed = 20;
-            transform.Rotate(0,rotationSpeed*Time.deltaTime,0);
-        }
-
-        if (rotateLeft){
-           rotationSpeed = -20;
-           transform.Rotate(0,rotationSpeed*Time.deltaTime,0);
-        }
-
-        
-
-    }
-    }
+ }
 
