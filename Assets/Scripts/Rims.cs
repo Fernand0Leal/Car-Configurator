@@ -34,47 +34,10 @@ public class Rims : MonoBehaviour
     public bool rimButton;
     public bool colorButton;
 
-    public int price;
-
     
+    public Price price2;
 
-    
-    
-    
-   
-    
-
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-
-       
-
-
-    //    r_Dropdown.onValueChanged.AddListener(delegate
-    //    {
-    //     r_DropdownValueChangeHappened(r_Dropdown);
-    //    });
-       
-
-       
-        // addPrice = GameObject.Find("AddValue").GetComponent<Price.cs>();
-       
-        //wheels = GameObject.FindGameObjectsWithTag ("wheel");
-        //defaultMaterial = wheels[0].GetComponent<MeshRenderer>().sharedMaterials[1];
-    
-
-
-        // r_Dropdown.onValueChanged.AddListener(PriceUpdate);
-
-    }
-
-    // public void r_DropdownValueChangeHappened(TMP_Dropdown sender){
-    //     PlayerPrefs.SetInt(PrefName, r_Dropdown.value);
-    //     PlayerPrefs.Save();
-    // }
+  
    
     public void LoadColorOptions(){
 
@@ -91,17 +54,14 @@ public class Rims : MonoBehaviour
         
         r_Dropdown.RefreshShownValue();
 
-       
-        
-        
 
         colorButton = true;
         rimButton = false;
 
-
-        
-
         r_Dropdown.onValueChanged.AddListener(RimColor);
+        
+                
+           
 
         
 
@@ -158,17 +118,38 @@ public class Rims : MonoBehaviour
              
             }
           }
+
+          if (index == 0 ){
+
+            price2.rimsColorPrice = 0;
+            
+          }
+          if (index == 1 ){
+
+            price2.rimsColorPrice = 0;
+            
+          }
+          if (index == 2 ){
+
+            price2.rimsColorPrice = 100;
+            
+          }
+          if (index == 3 ){
+
+            price2.rimsColorPrice = 200;
+            
+          }
      }
      
         
     }
 
     public void RimMesh(int value ) 
-    {
+     {
 
                 
 
-    if (rimButton == true){
+     if (rimButton == true){
 
             if (value == 0 ){
             rims0.SetActive(true);
@@ -177,35 +158,21 @@ public class Rims : MonoBehaviour
             rims3.SetActive(false);
             rims4.SetActive(false);
             rims5.SetActive(false);
+            price2.rimsPrice = 0;
             
             }
-            
-        
+
             if (value == 1){
             rims0.SetActive(false);
             rims1.SetActive(true); 
             rims2.SetActive(false);
             rims3.SetActive(false);
             rims4.SetActive(false);
-            rims5.SetActive(false);           
-            price += 500;
-            
-            print(price);
-            
+            rims5.SetActive(false); 
+            price2.rimsPrice = 0;
+
             }
-            
-            
-            
-            
-            
-            
-            
-
-            
-        
-
-        
-            
+  
             if (value == 2){
             rims0.SetActive(false);
             rims1.SetActive(false);
@@ -213,15 +180,10 @@ public class Rims : MonoBehaviour
             rims3.SetActive(false);
             rims4.SetActive(false);
             rims5.SetActive(false);
-            price += 500;
-            print(price);
-            }
-            else if(rims2 == false){
-                price -=500;
-                return;
-            }
 
+            price2.rimsPrice = 500;
             
+            }
             
         
              if (value == 3){
@@ -231,8 +193,10 @@ public class Rims : MonoBehaviour
             rims3.SetActive(true);
             rims4.SetActive(false);
             rims5.SetActive(false);
-            print(price);
+             price2.rimsPrice = 600;
+            
              }
+
              if (value == 4){
             rims0.SetActive(false);
             rims1.SetActive(false);
@@ -240,8 +204,10 @@ public class Rims : MonoBehaviour
             rims3.SetActive(false);
             rims4.SetActive(true);
             rims5.SetActive(false);
-            print(price);
+            price2.rimsPrice = 700;
+            
              }
+
             if (value == 5){
             rims0.SetActive(false);
             rims1.SetActive(false);
@@ -249,47 +215,14 @@ public class Rims : MonoBehaviour
             rims3.SetActive(false);
             rims4.SetActive(false);
             rims5.SetActive(true);
-            print(price);
+
+            price2.rimsPrice = 800;
+                   
             }
 
      }
-       
-     
-
-     
-        
-            
+                                  
         
     }
-
-
-    
-
-    
-    
-
-    // public void PriceUpdate (int value){
-
-    //     addPrice += value;
-    //     Price.cs.updateValue(addPrice);
-
-    //     if (value == 0){
-    //         addPrice(0);
-            
-    //         print ("No Price Change");
-    //     }
-    //     if (value == 1){
-    //         addPrice(2000);
-    //         print ("+2000$");
-    //     } else { 
-    //         print("-2000$");
-    //     }
-    //     if (value == 2){
-    //         print("+3000");
-    //     }else { 
-    //         print("-3000$");
-    //     }
-    // }
-
 
 }

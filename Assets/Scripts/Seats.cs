@@ -13,6 +13,8 @@ public class Seats : MonoBehaviour
     
     public Material[] seatsM = new Material [3];
 
+    public Price price2;
+
     public void Start()
     {
         
@@ -39,6 +41,22 @@ public class Seats : MonoBehaviour
                 }
              rend.materials = m_materials;
              
+            }
+
+            if (index == 0){
+
+                price2.seatsPrice = 0;
+
+            }
+            if (index == 1){
+
+                price2.seatsPrice = -1000;
+
+            }
+            if (index == 2){
+
+                price2.seatsPrice = 1000;
+
             }
       
        

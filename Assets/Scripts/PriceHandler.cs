@@ -6,12 +6,16 @@ using TMPro;
 
 public class PriceHandler : MonoBehaviour
 {
-    public int [,] dropValue = new int [5,5];
-    public float pricE;
+    
+    public int pricE = 300000;
     public TextMeshProUGUI priceText; 
 
     void Start(){
 
         priceText.text = pricE + "$".ToString();
+    }
+    public void Update(){
+
+       // pricE = 30000; 
     }
 }

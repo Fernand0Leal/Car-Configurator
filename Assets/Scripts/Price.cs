@@ -7,7 +7,12 @@ using TMPro;
 public class Price : MonoBehaviour
 {
     public GameObject priceManager;
-    public int priCe;
+    public int priCe = 300000;
+    public int rimsPrice;
+    public int rimsColorPrice; 
+    public int convertPrice;
+    public int seatsPrice;
+    public int windowsPrice;
     public TextMeshProUGUI priceTxt;
 
     void Start(){
@@ -15,10 +20,15 @@ public class Price : MonoBehaviour
        //priceTxt = GetComponent<Rims>().price;
     }
 
+    public void IncreasePrice(){
+
+        
+    }
+
     void Update(){
 
-        priceTxt.text = priCe + "$".ToString();
-        print (priceTxt.ToString());
+        priceTxt.text = windowsPrice + seatsPrice + convertPrice + rimsColorPrice + rimsPrice + priCe + "$".ToString();
+        print (priCe);
     }
 
     

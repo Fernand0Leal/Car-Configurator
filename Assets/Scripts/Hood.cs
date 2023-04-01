@@ -12,6 +12,8 @@ public class Hood : MonoBehaviour
     public GameObject rWindow1;
     public GameObject rWindow2;
     public GameObject rWindow3;
+
+    public Price price2;
    
 
 
@@ -37,6 +39,7 @@ public class Hood : MonoBehaviour
             rWindow1.SetActive(false);
             rWindow2.SetActive(false);
             rWindow3.SetActive(false);
+            price2.convertPrice = 5000;
             
         }
         

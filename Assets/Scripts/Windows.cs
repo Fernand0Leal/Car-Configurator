@@ -15,6 +15,8 @@ public class Windows : MonoBehaviour
 
     public Material[] windowM = new Material [3];
 
+    public Price price2;
+
     public void Start()
     {
         windowS = GameObject.FindGameObjectsWithTag ("Window");
@@ -42,6 +44,16 @@ public class Windows : MonoBehaviour
              rend.materials = m_materials;
              
             }
+          }
+
+          if (index == 0){
+            price2.windowsPrice  = 0;
+          }
+           if (index == 1){
+            price2.windowsPrice  = -500;
+          }
+           if (index == 2){
+            price2.windowsPrice  = 1500;
           }
 
     }
